@@ -5,7 +5,7 @@
     background-color: white;
     height: 100vh;
     z-index: 10;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
     overflow-y: auto;
     border-right: 1px solid #dee2e6;
 }
@@ -34,4 +34,24 @@
     .home {
         padding: 20px;
     }
+
+    /* responsive-post */
+
+    .responsive-post {
+        color: black;
+        font-size: 35px;
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        justify-content: end;
+    }
+}
+
+
+
+/* writePost */
+
+.writePost {
+    margin-top: 40px;
+    margin-left: 300px;
 }

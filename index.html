@@ -20,6 +20,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
   </head>
   <body>
     <!-- Top Navbar -->
@@ -41,7 +42,7 @@
 
           <!-- Logo and Title -->
 
-          <a class="navbar-brand d-flex align-items-center" href="#">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="../assets/logo.png" height="50" />
             <span class="text-primary">Think with Ink</span>
           </a>
@@ -57,21 +58,28 @@
         <!-- Navbar links -->
 
         <ul class="navbar-nav d-flex flex-row gap-4 mb-0 align-items-center">
+          <!-- Search -->
           <li class="nav-item d-md-none fs-3">
             <a href="#" class="nav-link">
               <i class="bi bi-search"></i>
             </a>
           </li>
-
+          <!-- Post -->
           <li class="nav-item d-none d-sm-block fs-5">
-            <a href="#" class="nav-link">
+            <a href="write.html" class="nav-link">
               <i class="bi bi-pencil-square"></i>
-              <span>Write</span>
+              <span>Post</span>
             </a>
           </li>
+          <!-- Login -->
           <li class="nav-item fs-3">
-            <a href="#" class="nav-link">
-              <i class="bi bi-person-circle"></i>
+            <a
+              type="button"
+              class="btn btn-outline-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#authmodal"
+            >
+              Login
             </a>
           </li>
         </ul>
@@ -82,9 +90,15 @@
     <div id="sidebar" class="sidebar d-none d-md-block">
       <ul class="nav flex-column p-3 gap-2">
         <li class="nav-item">
-          <a class="nav-link text-black" href="#">
+          <a class="nav-link text-black" href="index.html">
             <i class="bi bi-house-door-fill me-2"></i>
             <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">
+            <i class="bi bi-grid-fill me-2"></i>
+            <span>Categories</span>
           </a>
         </li>
         <li class="nav-item">
@@ -105,18 +119,12 @@
             <span>Following</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-black" href="#">
-            <i class="bi bi-gear-fill me-2"></i>
-            <span>Settings</span>
-          </a>
-        </li>
 
         <hr />
         <li class="d-flex align-items-center justify-content-center nav-item">
           <a class="nav-link fs-4" href="#">
-            <span class="d-flex gap-2 p-2 btn btn-danger ms-2"
-              >Logout<i class="bi bi-box-arrow-right"></i
+            <span class="d-flex gap-2 p-2 btn btn-success ms-2"
+              >Login<i class="bi bi-box-arrow-right"></i
             ></span>
           </a>
         </li>
@@ -125,17 +133,14 @@
 
     <!-- Home Page -->
     <div class="container home" id="home">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-      necessitatibus, eius officiis eos dolorum optio ex illo maxime soluta
-      itaque sunt, quis nobis voluptate, non accusamus at praesentium deleniti
-      consequuntur assumenda fugiat facilis ratione! Optio a sapiente
-      dignissimos, sit modi magnam, aperiam pariatur tempora temporibus
-      blanditiis obcaecati cumque fugiat vitae doloribus! Aliquam et
-      repellendus, quo itaque illo corporis in temporibus adipisci nobis,
-      deserunt id, mollitia voluptatum hic optio enim tempore fuga odit
-      molestiae. Provident odit modi enim facere natus vero veniam. Illum cumque
-      dolor, magnam sed est facilis non autem explicabo eligendi error veritatis
-      corrupti aliquam! Provident accusantium necessitatibus rerum!
+      <div
+        class="d-flex flex-column d-sm-none text-end"
+        style="margin-top: 390px"
+      >
+        <a href="write.html" class="responsive-post">
+          <i class="bi bi-pencil-square"></i>
+        </a>
+      </div>
     </div>
 
     <!-- bottom navbar for xs,sm,md -->
@@ -171,6 +176,58 @@
       </div>
     </nav>
 
+    <!-- modal for authentication -->
+    <div class="modal" id="authmodal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title w-100 text-center">Login</h3>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body d-flex flex-column gap-3 align-items-center">
+            <input
+              type="text"
+              class="form-control w-75 border-dark"
+              placeholder="Email or phone"
+            />
+            <input
+              type="text"
+              class="form-control w-75 border-dark"
+              placeholder="Password"
+            />
+
+            <!-- Remember me, Forgot Pass -->
+            <div
+              class="d-flex justify-content-between align-items-center w-75 mx-auto"
+            >
+              <div class="form-check w-75 mx-auto text-start">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="remember"
+                  style="cursor: pointer"
+                />
+                <label class="form-check-label">Remember me</label>
+              </div>
+              <a href="#" class="text-decoration-none small text-nowrap"
+                >Forgot Password?</a
+              >
+            </div>
+
+            <button class="btn btn-primary w-75">Login</button>
+
+            <div class="d-flex align-items-center w-75 mx-auto">
+              <hr class="flex-grow-1" />
+              <span class="px-2 text-muted small">Or</span>
+              <hr class="flex-grow-1" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
     <script src="script.js"></script>
   </body>
 </html>
