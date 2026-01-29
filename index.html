@@ -77,7 +77,7 @@
               type="button"
               class="btn btn-outline-primary"
               data-bs-toggle="modal"
-              data-bs-target="#authmodal"
+              data-bs-target="#loginmodal"
             >
               Login
             </a>
@@ -121,26 +121,17 @@
         </li>
 
         <hr />
-        <li class="d-flex align-items-center justify-content-center nav-item">
-          <a class="nav-link fs-4" href="#">
-            <span class="d-flex gap-2 p-2 btn btn-success ms-2"
-              >Login<i class="bi bi-box-arrow-right"></i
-            ></span>
-          </a>
-        </li>
       </ul>
     </div>
 
     <!-- Home Page -->
     <div class="container home" id="home">
-      <div
-        class="d-flex flex-column d-sm-none text-end"
-        style="margin-top: 390px"
+      <a
+        href="write.html"
+        class="d-sm-none position-fixed end-0 me-5 m-3 text-primary responsive-post"
       >
-        <a href="write.html" class="responsive-post">
-          <i class="bi bi-pencil-square"></i>
-        </a>
-      </div>
+        <i class="bi bi-pencil-square"></i>
+      </a>
     </div>
 
     <!-- bottom navbar for xs,sm,md -->
@@ -177,7 +168,9 @@
     </nav>
 
     <!-- modal for authentication -->
-    <div class="modal" id="authmodal">
+    <!-- -------------------------------------------------------------------- -->
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginmodal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -190,11 +183,13 @@
               type="text"
               class="form-control w-75 border-dark"
               placeholder="Email or phone"
+              required
             />
             <input
-              type="text"
+              type="password"
               class="form-control w-75 border-dark"
               placeholder="Password"
+              required
             />
 
             <!-- Remember me, Forgot Pass -->
@@ -215,18 +210,87 @@
               >
             </div>
 
-            <button class="btn btn-primary w-75">Login</button>
+            <button class="btn btn-primary w-75" type="button">Login</button>
+            <a
+              class="text-decoration-none"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#signupmodal"
+              data-bs-dismiss="modal"
+            >
+              <span class="text-dark">Don't have an account?</span>
+              <span> Sign up</span>
+            </a>
 
             <div class="d-flex align-items-center w-75 mx-auto">
               <hr class="flex-grow-1" />
               <span class="px-2 text-muted small">Or</span>
               <hr class="flex-grow-1" />
             </div>
+
+            <button class="btn btn-light w-75 border">
+              <img
+                src="assets/google-icon.svg"
+                class="img-fluid me-3"
+              />Continue with Google
+            </button>
           </div>
         </div>
       </div>
     </div>
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupmodal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title w-100 text-center">Sign up</h3>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body d-flex flex-column gap-3 align-items-center">
+            <div class="d-flex flex-row gap-3">
+              <input
+                type="text"
+                class="form-control w-50 border-dark"
+                placeholder="First Name"
+              />
+              <input
+                type="text"
+                class="form-control w-50 border-dark"
+                placeholder="Last Name"
+              />
+            </div>
+            <input
+              type="text"
+              class="form-control w-75 border-dark"
+              placeholder="Email or mobile"
+            />
+            <input
+              type="password"
+              class="form-control w-75 border-dark"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              class="form-control w-75 border-dark"
+              placeholder="Confirm Password"
+            />
 
+            <button class="btn btn-primary w-75">Sign up</button>
+
+            <a
+              class="text-decoration-none"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#loginmodal"
+              data-bs-dismiss="modal"
+            >
+              <span class="text-black">Already have an account?</span>
+              <span class="text-primary">Login</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--  -->
     <script src="script.js"></script>
   </body>

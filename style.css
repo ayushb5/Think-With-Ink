@@ -38,12 +38,8 @@
     /* responsive-post */
 
     .responsive-post {
-        color: black;
-        font-size: 35px;
-        display: flex;
-        flex-direction: column;
-        margin-top: auto;
-        justify-content: end;
+        bottom: 85px;
+        font-size: 32px;
     }
 }
 
